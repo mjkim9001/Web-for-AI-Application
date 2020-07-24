@@ -24,7 +24,7 @@ def iris():
 
 @app.route('/project')
 def project():
-    return render_template('17.templates.html')
+    return render_template('17_templates.html')
 
 @app.route('/hello/')
 @app.route('/hello/<name>')
