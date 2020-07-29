@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block subtitle %}
+    <strong>문자 분류</strong> - <small>스팸인지 아닌지 구분하기</small>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-8">
+            <table class="table table-borderless">
+                <tr class="d-flex">
+                    <td class = "col-4">문자 내용</td>
+                    <td class = "col-8">{{ message.mes }}</td>
+                </tr>
+                <tr class="d-flex alert alert-info">
+                    <td class = "col-4"><strong>Naive Bayes</strong></td>
+                    <td class = "col-8"><strong>{{ message.result }}</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button class="btn btn-primary" onclick="location.href='/spam'">재실행</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-3"></div>
+    </div>
+  {% endblock %}                

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block subtitle %}
+    <strong>분류</strong> - <small>뇌혈관 질환</small>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-6">
+            <form action="/blood" method="POST">
+                <table class="table">
+                    <tr class="d-flex">
+                        <td class = "col-6" style="text-align: center;">AGE(연령)</td>
+                        <td class = "col-10">
+                            <select class="form-control" style="margin:0 auto; width: 200px;" id="age" name="age">
+                                <option value="0" selected>20-24</option>
+                                <option value="1">25-26</option>
+                                <option value="2">27-28</option>
+                                <option value="3">29-30</option>
+                                <option value="4">31-32</option>
+                                <option value="5">33-34</option>
+                                <option value="6">35-36</option>
+                                <option value="7">37-38</option>
+                                <option value="8">39-40</option>
+                                <option value="9">41-42</option>
+                                <option value="10">43-44</option>
+                                <option value="11">45-46</option>
+                                <option value="12">47-48</option>
+                                <option value="13">49-50</option>
+                                <option value="14">51-52</option>
+                                <option value="15">53-54</option>
+                                <option value="16">55-56</option>
+                                <option value="17">57-58</option>
+                                <option value="18">59-60</option>
+                                <option value="19">61-62</option>
+                                <option value="20">63-64</option>
+                                <option value="21">65-66</option>
+                                <option value="22">67-68</option>
+                                <option value="23">69-70</option>
+                                <option value="24">71-72</option>
+                                <option value="25">73-74</option>
+                                <option value="26">75-</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="d-flex">
+                        <td class = "col-6" style="text-align: center">HGB(혈색소)</td>
+                        <td class="col-10"><input type="text" id="hgb" 
+                            class="form-control" style="margin:0 auto; width: 200px;" placeholder="hgb" name="hgb"></td>
+                    </tr>
+                    <tr class="d-flex">
+                        <td class = "col-6" style="text-align: center">TCHOL(총 콜레스테롤)</td>
+                        <td class="col-10"><input type="text" id="tchol" 
+                            class="form-control" style="margin:0 auto; width: 200px;" placeholder="tchol" name="tchol"></td>
+                    </tr>               
+                    <tr class="d-flex">
+                        <td class = "col-6" style="text-align:center">TG(중성지방)</td>
+                        <td class="col-10" style="text-align: center"><input type="text" id="tg" 
+                            class="form-control" style="margin:0 auto; width: 200px;" placeholder="tg" name="tg"></td>
+                    </tr>
+                    <tr class="d-flex">
+                        <td class = "col-6" style="text-align:center">HDL(HDL콜레스테롤)</td>
+                        <td class="col-10" style="text-align: center"><input type="text" id="hdl" 
+                            class="form-control" style="margin:0 auto; width: 200px;" placeholder="hdl" name="hdl"></td>
+                    </tr>                       
+                    <table class="table" style="width: 600px; margin-top: -18px;">
+                        <td colspan="2" style="text-align: center;">
+                            <button type="submit" class="btn btn-primary">실행</button>&nbsp;&nbsp;&nbsp;
+                            <button type="reset" class="btn btn-secondary">취소</button>
+                        </td>
+              </table>                      
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+  {% endblock %}                

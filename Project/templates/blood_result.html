@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block subtitle %}
+    <strong>뇌혈관질환 유무 분류</strong> - <small>결과</small>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-6">
+                <table class="table table-borderless">
+                    <tr>
+                        <td>AGE(연령)</td>
+                        <td>{{ blood.age }}</td>
+                    </tr>
+                    <tr>
+                        <td>HGB(혈색소)</td>
+                        <td>{{ blood.hgb }}</td>
+                    </tr>
+                    <tr>
+                        <td>TCHOL(총 콜레스테롤)</td>
+                        <td>{{ blood.tchol }}</td>
+                    </tr>
+                    <tr>
+                        <td>TG(중성지방)</td>
+                        <td>{{ blood.tg }}</td>
+                    </tr>
+                    <tr>
+                        <td>HDL(HDL콜레스테롤)</td>
+                        <td>{{ blood.hdl }}</td>
+                    </tr>
+                    <tr class="alert alert-warning">
+                        <td><strong>뇌혈관질환 진료여부(LR)</strong></td>
+                        <td><strong>{{ blood.blood_lr }}</strong></td>
+                    <tr>
+                    <tr class="alert alert-info">
+                        <td><strong>뇌혈관질환 진료여부(SVM)</strong></td>
+                        <td><strong>{{ blood.blood_svm }}</strong></td>
+                    <tr>
+                    <tr class="alert alert-warning">
+                        <td><strong>뇌혈관질환 진료여부(DT)</strong></td>
+                        <td><strong>{{ blood.blood_dt }}</strong></td>
+                    <tr>
+                    <tr class="alert alert-info">
+                        <td><strong>뇌혈관질환 진료여부(DEEP)</strong></td>
+                        <td><strong>{{ blood.blood_deep }}</strong></td>
+                    <tr>
+
+                        <td colspan="2" style="text-align: center;">
+                            <button class="btn btn-primary" onclick="location.href='/blood'">재실행</button>
+                        </td>
+                    </tr>
+                </table>		
+        </div>
+        <div class="col-4"></div>
+    </div>
+  {% endblock %}                

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block subtitle %}
+    <strong>문자 분류</strong> - <small>스팸인지 아닌지 구분하기</small>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-8">
+            <form action="/spam" method="POST">
+                <table class="table">
+                    <tr>
+                        <td>문자 내용(ENG)</td>
+                        <td><textarea class="form-control" rows="5" name="mes"></textarea></td>
+                    </tr>
+                   <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button type="submit" class="btn btn-primary">실행</button>&nbsp;&nbsp;&nbsp;
+                            <button type="reset" class="btn btn-secondary">취소</button>
+                        </td>
+                    </tr>
+                </table>		
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+  {% endblock %}                

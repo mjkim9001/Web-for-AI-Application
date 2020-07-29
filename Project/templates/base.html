@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <style>
+        #clock{ color:black;}
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI Application</title>
@@ -14,8 +17,8 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-light navbar-dark ">
         <!-- Brand/logo -->
-        <a class="navbar-brand" style="margin-left:50px;margin-right:100px;" href="#">
-            <img src="{{ url_for('static', filename='images/vision_logo.png') }}" alt="Logo" style="height:45px;">
+        <a class="navbar-brand" style="margin-left:50px;margin-right:100px;" href="/">
+            <img src="{{ url_for('static', filename='images/vision_logo.png') }}" alt="Logo" style="height:60px;">
         </a>
 
         <!-- Links -->
@@ -57,18 +60,23 @@
                         <div class="dropdown-menu">
                         <a class="dropdown-item" href="/classification_iris">아이리스 분류</a>
                         <a class="dropdown-item" href="/classification">이미지 분류</a>
+                        <a class="dropdown-item" href="/spam">스팸문자 분류</a>
+                        <a class="dropdown-item" href="/blood">뇌질환 분류</a>
                         </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if menu.clst %}active{% endif %}" 
                         href="{% if menu.clst %}#{% else %}/clustering{% endif %}">군집화</a>
                     </li>
+                
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">팀 멤버</a>
+                        <a class="nav-link dropdown-toggle {% if menu.user %}active{% endif %}" data-toggle="dropdown" href="#">팀 멤버</a>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/KMJ">김민지</a>
-                        <a class="dropdown-item" href="#">이용규</a>
-                        <a class="dropdown-item" href="#">김민우</a>
+                        <a class="dropdown-item" href="/member/변준현?nickname=비전_첫째">변준현</a>
+                        <a class="dropdown-item" href="/member/오주현?nickname=비전_둘째">오주현</a>
+                        <a class="dropdown-item" href="/member/김민지?nickname=비전_셋째">김민지</a>
+                        <a class="dropdown-item" href="/member/김소희?nickname=비전_넷째">김소희</a>
+                        
                         </div>
                     </li>
                 </ul>
@@ -84,7 +92,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center fixed-bottom">
         <span class="navbar-text">
-            Copyright &copy; 2020 AI Innovator
+            <img src="{{ url_for('static', filename='images/robot.png') }}" alt="logo" style="height:30px;">Copyright &copy; 2020 VISION
         </span>
     </nav>
     {% block addition %}
